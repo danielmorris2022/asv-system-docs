@@ -16,14 +16,24 @@ Different profiles may be used for **lab testing** (wired or internal Wi-Fi) ver
 
 Use this table to record the actual IP addresses and subnets used in your deployment:
 
-| Device / Platform | Interface | IP Address | Subnet        | Notes                          |
-|-------------------|-----------|-----------|--------------|---------------------------------|
-| Base station      | wlan0     |           |              | Primary operator machine        |
-| Base station      | eth0      |           |              | Wired link (if used)           |
-| WAMV-1 computer   | eth0      |           |              | Onboard main computer          |
-| WAMV-2 computer   | eth0      |           |              | Onboard main computer          |
-| RoboBoat computer | eth0      |           |              | Onboard main computer          |
-| TowFish logger    |           |           |              | Onboard or tow-vessel logger   |
+| Device / Platform     | Interface | IP Address    | Subnet        | Notes                                   |
+|-----------------------|-----------|---------------|---------------|-----------------------------------------|
+| Base station router   |           | 192.168.1.5   | 192.168.1.0/24| SSID WAMV16_BASE2                       |
+| WAMV1 router          |           | 192.168.1.1   | 192.168.1.0/24| SSID WAMV16_CB1                         |
+| WAMV2 router          |           | 192.168.1.2   | 192.168.1.0/24| SSID WAMV16_CB2                         |
+| WAMV1 edge router     |           | 192.168.1.3   | 192.168.1.0/24| Ubiquiti EdgeRouter                     |
+| WAMV2 edge router     |           | 192.168.1.4   | 192.168.1.0/24| Ubiquiti EdgeRouter                     |
+| RoboBoat edge router  |           | 192.168.1.6   | 192.168.1.0/24| Ubiquiti EdgeRouter                     |
+| Ubiquiti base AP      |           | 192.168.1.10  | 192.168.1.0/24| Ubiquiti radio at base station          |
+| Ubiquiti WAMV2 AP     |           | 192.168.1.11  | 192.168.1.0/24| Ubiquiti radio on WAMV2                 |
+| Ubiquiti WAMV1 AP     |           | 192.168.1.12  | 192.168.1.0/24| Ubiquiti radio on WAMV1                 |
+| WAMV1 Jetson Xavier   |           | 192.168.1.110 | 192.168.1.0/24| Low-level controller (LL1)              |
+| WAMV1 Jetson Orin     |           | 192.168.1.120 | 192.168.1.0/24| High-level controller (HL1)             |
+| WAMV2 Jetson Xavier   |           | 192.168.1.100 | 192.168.1.0/24| Low-level controller (LL2)              |
+| WAMV2 Jetson Orin     |           | 192.168.1.186 | 192.168.1.0/24| High-level controller (HL2)             |
+| RoboBoat Amcrest cam1 |           | 192.168.1.131 | 192.168.1.0/24| Camera 1                                |
+| RoboBoat Amcrest cam2 |           | 192.168.1.132 | 192.168.1.0/24| Camera 2                                |
+| RoboBoat Amcrest cam3 |           | 192.168.1.133 | 192.168.1.0/24| Camera 3                                |
 
 Add additional rows as needed for switches, access points, and other devices.
 
