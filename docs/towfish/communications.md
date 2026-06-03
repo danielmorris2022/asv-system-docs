@@ -1,4 +1,4 @@
-# TowFish Networking
+# TowFish Communications
 
 ## Communication with Tow Vessel
 
