@@ -2,10 +2,10 @@
 
 This documentation covers the autonomous surface vessel (ASV) and small boat platforms used in our lab and club:
 
-- WAMV-1
-- WAMV-2
-- RoboBoat
-- TowFish
+- **WAMV-1** – WAM-V 16 platform with bow thrusters for fine maneuvering and general-purpose autonomy testing.
+- **WAMV-2** – WAM-V 16 platform without bow thrusters, equipped with a depth sensor, weather station, and mounts for a waterwheel and drone platform.
+- **RoboBoat** – Smaller competition-oriented vessel used for RoboBoat/RobotX-style tasks and autonomy development.
+- **TowFish** – Towed sensor platform (e.g., magnetometer and related sensors) deployed from a surface vessel.
 
 ## Platform Index
 
