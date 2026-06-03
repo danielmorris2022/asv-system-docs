@@ -4,18 +4,27 @@ This document summarizes the major software components used across platforms.
 
 ## Main Repositories
 
-List the main GitHub repositories and their roles, for example:
+The following GitHub repositories form the core of the software stack used on the WAMV platforms, RoboBoat, and TowFish:
 
-- `xvrobotics/wamv_nav` – navigation and autonomy stack for WAMV platforms (path planning, control, mission logic).
-- `Marine-Robotics-Club/ros2_humble_install` – scripts to install ROS 2 Humble on development machines and onboard computers.
-- `Marine-Robotics-Club/ros2_humble_velodyne_install` – scripts to install Velodyne LiDAR drivers when used.
+- [`xvrobotics/wamv_nav`](https://github.com/xvrobotics/wamv_nav) – navigation and autonomy stack for the WAMV platforms. Provides ROS 2 packages for low-level control, higher-level navigation, and mission logic, designed to integrate with the OSRF VRX simulation environment and ROS 2 Humble.
+- [`Marine-Robotics-Club/ros2_humble_install`](https://github.com/Marine-Robotics-Club/ros2_humble_install) – shell script to install ROS 2 Humble Desktop on Ubuntu 22.04 host and onboard machines, including necessary dependencies for VRX and related packages.
+- [`Marine-Robotics-Club/ros2_humble_velodyne_install`](https://github.com/Marine-Robotics-Club/ros2_humble_velodyne_install) – shell script to install Velodyne LiDAR drivers and create a Vision2 workspace on Ubuntu 22.04, including a standard launch file for Velodyne nodes.
 
-## Common ROS/ROS2 Concepts
+Add any other repositories here as they are adopted into the stack.
 
-- ROS/ROS2 distributions in use (e.g., Humble).
-- Naming conventions for nodes, topics, frames, and packages.
+## ROS 2 Distribution and Environment
 
-## Platform-Specific Packages
+- Primary ROS 2 distribution: **ROS 2 Humble**, running on **Ubuntu 22.04** for development machines and onboard computers.
+- Use the `ros2_humble_install` script to standardize installations on new machines.
+- VRX simulation (from `osrf/vrx`) is used alongside the WAMV navigation stack for simulation-based development and testing.
 
-- Summarize which packages are used on which platforms (e.g., navigation stack shared by WAMV-1/WAMV-2, different perception stack on RoboBoat).
-- Link to platform-level `software_stack.md` files for details.
+## Common Patterns
+
+Across platforms, the software stack generally follows these patterns:
+
+- Core navigation and control logic is implemented in ROS 2 nodes (from `wamv_nav` and related packages).
+- Sensor drivers (e.g., GNSS/INS, cameras, LiDAR) publish ROS 2 topics consumed by navigation, perception, and logging nodes.
+- Launch files are used to start groups of nodes for specific scenarios (e.g., dock tests, full missions, simulations).
+- Configuration files (YAML, etc.) define platform-specific parameters such as thruster mappings, sensor transforms, and controller gains.
+
+See the platform-specific `software_stack.md` and `configuration_and_parameters.md` documents for details on each vehicle.
